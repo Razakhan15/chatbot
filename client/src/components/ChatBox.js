@@ -20,11 +20,14 @@ const ChatBox = () => {
   useEffect(() => {
     fetchMessages();
   }, []);
+
+  //FETCH DATA FROM DB
   const fetchMessages = async () => {
     const { data } = await axios.get("http://localhost:8000/api/posts");
     setMessages(data);
   };
 
+  //POSTING DATA TO DB AND GETTING RESPONSE FROM THE OPENROUTER API
   const handleClick = async (e) => {
     e.preventDefault();
     try {

@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+//MODEL FOR DB
+
 const postModel = mongoose.Schema(
   {
     client: String,

@@ -1,6 +1,8 @@
 const asyncHandler = require("express-async-handler");
 const Post = require("../models/postModel");
 
+//ALL MESSAGES
+
 const allPosts = asyncHandler(async (req, res) => {
   try {
     const posts = await Post.find();
@@ -10,6 +12,8 @@ const allPosts = asyncHandler(async (req, res) => {
     throw new Error("Failed to get the posts");
   }
 });
+
+//POST MESSAGE
 
 const uploadPost = asyncHandler(async (req, res) => {
   try {
