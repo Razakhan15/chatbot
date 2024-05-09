@@ -10,7 +10,10 @@ connectDb();
 const app = express()
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+const corsOptions = {
+    origin: "https://chatbot-assignment.onrender.com/", // frontend URI (ReactJS)
+}
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api/posts", postRoutes);
