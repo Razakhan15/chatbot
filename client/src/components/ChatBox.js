@@ -23,7 +23,7 @@ const ChatBox = () => {
 
   //FETCH DATA FROM DB
   const fetchMessages = async () => {
-    const { data } = await axios.get("http://localhost:8000/api/posts");
+    const { data } = await axios.get("https://chatbot-bxw0.onrender.com/api/posts");
     setMessages(data);
   };
 
@@ -45,7 +45,7 @@ const ChatBox = () => {
           },
         }
       );
-      await axios.post("http://localhost:8000/api/posts", {
+      await axios.post("https://chatbot-bxw0.onrender.com/api/posts", {
         client: text,
         bot: data.choices[0].message.content,
       });
