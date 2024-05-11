@@ -23,8 +23,10 @@ const ChatBox = () => {
 
   //FETCH DATA FROM DB
   const fetchMessages = async () => {
+    setLoading(true)
     const { data } = await axios.get("https://chatbot-bxw0.onrender.com/api/posts");
     setMessages(data);
+    setLoading(false)
   };
 
   //POSTING DATA TO DB AND GETTING RESPONSE FROM THE OPENROUTER API
